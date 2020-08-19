@@ -1,10 +1,31 @@
 import React from 'react';
 
 export function Hero() {
+  const [email, setEmail] = React.useState('');
+
+  function onContactClickHandler() {
+    console.log(email, 'ppp');
+    // const data = {
+    //   email,
+    // };
+    fetch('http://localhost:8888/api/hello')
+      .then(res => res.json())
+      .then(res => {
+        console.log(res, 'SUCCESS');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  function inputHandler(e) {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+  }
   return (
     <div className="container mx-auto p-6 mb-8 flex">
       <img
-        src="/images/undraw_setup_analytics_8qkl.svg"
+        src="/images/undraw_open_source_1qxw.svg"
         alt="Mock alt added. Needs to be replaced or changed."
         className="hidden sm:block sm:w-1/2"
       />
@@ -21,9 +42,14 @@ export function Hero() {
           <input
             type="text"
             placeholder="Enter Email Address"
+            value={email}
             className="border-2 border-primary-100 rounded-md w-3/5 p-2 my-2"
+            onChange={inputHandler}
           />
-          <button className="ml-2 text-white w-2/5 max-w-xs bg-secondary-dark border-2 rounded-md p-2 my-2">
+          <button
+            className="ml-2 text-white w-2/5 max-w-xs bg-secondary-dark border-2 rounded-md p-2 my-2"
+            onClick={onContactClickHandler}
+          >
             Let's Connect
           </button>
         </div>

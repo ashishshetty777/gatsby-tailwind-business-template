@@ -11,7 +11,7 @@ export default function ProductShowCase() {
         <div>
           <article className="w-auto mt-2 mb-4 sm:container sm:mb-12 sm:mx-auto sm:flex sm:flex-col sm:items-center sm:justify-center">
             <h4 className="text-xl py-2 my-2 text-secondary-dark text-center font-medium tracking-wide sm:text-3xl">
-              Quam id leo in vitae
+              Qufaucibus in vitae
             </h4>
             <h1 className="text-primary-700 text-center font-medium tracking-wide mb-8 sm:hidden">
               Mauris sit amet massa.

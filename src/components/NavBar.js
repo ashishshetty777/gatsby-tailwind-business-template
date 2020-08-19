@@ -35,7 +35,7 @@ export default function NavBar() {
             Home
           </Link>
           <Link
-            to="/"
+            to="/services"
             className="mt-1 block px-2 py-1 text-primary-400 font-semibold rounded hover:text-primary-900 hover:bg-primary-050 hover:border-primary-800 hover:border-2 sm:mt-0 sm:ml-6"
           >
             Services
