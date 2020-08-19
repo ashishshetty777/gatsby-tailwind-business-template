@@ -4,11 +4,13 @@ export function Hero() {
   const [email, setEmail] = React.useState('');
 
   function onContactClickHandler() {
-    console.log(email, 'ppp');
-    // const data = {
-    //   email,
-    // };
-    fetch('http://localhost:8888/api/hello')
+    const data = {
+      email,
+    };
+    fetch('api/contact', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
       .then(res => res.json())
       .then(res => {
         console.log(res, 'SUCCESS');
@@ -19,7 +21,6 @@ export function Hero() {
   }
 
   function inputHandler(e) {
-    console.log(e.target.value);
     setEmail(e.target.value);
   }
   return (
